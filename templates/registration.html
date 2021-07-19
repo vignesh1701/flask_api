@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Registration{% endblock %}
+{% block header %}<h1 id='display'>Registration Form</h1>{% endblock %}
+{% block content %}
+<form method="POST">
+    <label>username</label>
+    <input type="text" name='user'>
+    <br>
+    <label>password</label>
+    <input type='password' name='password'>
+    <br>
+    <label>Email</label>
+    <input type="text" name='mail'>
+    <br>
+    <label>phone</label>
+    <input type="number" name='mobile'>
+    <br>
+    <input type="submit">
+</form>
+
+<script>
+    //fetch('http://127.0.0.1:5000/api').then(function(response){
+      //  return response.json()
+    //}).then(function(data){
+        document.querySelector('#dispaly').innerHTML="i am vignesh"
+    //})
+</script>
+{% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for m in messages %}
+            <p>{{m}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div>
+    {% if msg %}
+        <p>{{msg}} is registered already,kindly use <a href='login'>Login</a> to login</p>
+    {% endif %}
+    <p>Use Login page <a href='login'>login</a></p>
+</div>
+{% endblock %}

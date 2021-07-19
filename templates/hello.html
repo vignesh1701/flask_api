@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>helloe</title>
+    </head>
+    <body>
+        <h1 id='hello'>Hi i am vignesh</h1>
+        <script>
+            fetch('http://127.0.0.1:5000/api').then(function(response){
+                return response.json()
+            }).then(function(data){
+                document.getElementById('hello').innerHTML=data['message']
+            })
+        </script>
+        
+    </body>
+</html>
